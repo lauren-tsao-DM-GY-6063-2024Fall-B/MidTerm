@@ -4,16 +4,16 @@
 ### Milestone #2
 
 ### what you’ve done this week
-- Researched and figured out how to slow down time for the individual dream layers. 
+- Researched and successfully built the foundation of the project, which is to slow down time for the individual dream layers and have them displayed on circles.
 
 ### description of the files, classes, objects or arrays you will use
-- Made objects out of the circles so that I can easily change their dimensions whenever.
+- Made objects for the circles so that I can easily change their dimensions whenever. For arrays, I'll apply them when I start adding effects that are triggered when the mouse hovers over the circles.
 
 ### description of any interactivity or time-based logic
-- The entire works revolves around real-time. I intend it such that it is collection of clocks that show the current time for each dream layer. As for the interactivity, I want the circles to show the time when the mouse rolls over it.
+- The project revolves around real-time and is constantly updating. I intend it such that it is collection of clocks that show the current time for each dream layer. As for the interactivity, I want the circles to display their current time when the mouse hovers over them.
 
 ### description of functions you have written or will write
-- The current circles are placeholders and will be turned into custom functions to add more details, such as the arrow sticking that will act like the second hand of a clock.
+- The circles are placeholders and will be turned into custom functions as I move on to adding details. I'll also add ellipses orbiting around the circles, operating like second hands of a clock.
 
 
 #### Milestone #1
