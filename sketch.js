@@ -1,10 +1,11 @@
 let slowSec = 0;
-let circleD = {r: 200, L1: 300, L2: 400, L3: 500, L4: 600};
+let circleD = {r: 100, L1: 200, L2: 300, L3: 400, L4: 500};
 let mImg0;
 let mImg1;
 let mImg2;
 let mImg3;
 let mImg4;
+let mImgBG;
 let spacing = 1.1;
 let detailAngle = 0;
 let rotationSpeed = 10;
@@ -15,14 +16,17 @@ function preload() {
   mImg2 = loadImage("Layer2_Texture.gif");
   mImg3 = loadImage("Layer3_Texture.gif");
   mImg4 = loadImage("Layer4_Texture.gif");
+  mImgBG = loadImage("Background_Texture.gif")
 }
 
 
-// function drawCircle(x, y, diameter, angle, color) {
+// function drawCircle(x, y, diameter, angle) {
 //   push();
 //   translate(x, y);
 //   rotate(angle);
-//   fill(color);
+//   stroke(200)
+//   strokeWeight(0.5)
+//   noFill();
 //   ellipse(0, 0, diameter);
 //   pop();
 // }
@@ -35,7 +39,8 @@ function setup() {
 
 function draw() {
   background(220);
-  image(mImg0, -width, 0); //hide graphics
+  image(mImgBG, 0, 0, width, height); //hide graphics
+  image(mImg0, -width, 0);
   image(mImg1, -width, 0);
   image(mImg2, -width, 0);
   image(mImg3, -width, 0);
@@ -66,32 +71,36 @@ function draw() {
   // looping details in bg
 
   detailAngle += rotationSpeed;
+  let mwBG1 = map(mouseX, 0, width, width / 6, width / 5);
+  let mwBGr = map(mouseX, 0, width, -80, -200)
 
   //left detail circles
   push();
+  blendMode(HARD_LIGHT)
   translate(width / 6, height / 2); 
-  rotate(-detailAngle);
+  rotate(mwBGr);
   for (let d = 10; d < width * 2; d *= spacing) {
     noFill();
     stroke(150);
     strokeWeight(1);
     drawingContext.setLineDash([10, 5, 20, 8, 5, 15]);
-    ellipse(0, 0, d);
+    ellipse(mwBG1, 0, d);
   }
   pop();
 
-  //right detail circles
-  push();
-  translate(width - width / 6, height / 2); 
-  rotate(detailAngle);
-  for (let d = 10; d < width * 2; d *= spacing) {
-    noFill();
-    stroke(150);
-    strokeWeight(1);
-    drawingContext.setLineDash([10, 5, 20, 8, 5, 15]);
-    ellipse(0, 0, d);
-  }
-  pop();
+  // //right detail circles
+  // push();
+  // blendMode(HARD_LIGHT)
+  // translate(width - width / 6, height / 2); 
+  // rotate(detailAngle);
+  // for (let d = 10; d < width * 2; d *= spacing) {
+  //   noFill();
+  //   stroke(150);
+  //   strokeWeight(1);
+  //   drawingContext.setLineDash([10, 5, 20, 8, 5, 15]);
+  //   ellipse(0, 0, d);
+  // }
+  // pop();
 
 
 
@@ -151,7 +160,7 @@ let timeDisplay4 =
   nf(hours4, 2) + ":" + nf(minutes4, 2) + ":" + nf(seconds4, 2) + " " + ampm4;
 
 // reality time display (on screen)
-fill(0);
+fill(200);
 textFont('Courier New');
 textSize(20);
 let tmw4 = map(mouseX, 0, width, width - width / 6, width / 6);
@@ -161,6 +170,7 @@ text(timeDisplay4, tmw4, 20);
 ////drawing line
 push();
 translate(mw4, height / 2);
+stroke(200)
 line(0, 0, 0, -280);
 pop();
 
@@ -221,7 +231,7 @@ let timeDisplay3 =
   nf(hours3, 2) + ":" + nf(minutes3, 2) + ":" + nf(seconds3, 2) + " " + ampm3;
 
 // reality time display (on screen)
-fill(0);
+fill(200);
 textFont('Courier New');
 textSize(20);
 let tmw3 = map(mouseX, 0, width, width - width / 2.2, width / 2.2);
@@ -231,6 +241,7 @@ text(timeDisplay3, tmw3, 20);
 ////drawing line
 push();
 translate(mw3, height / 2);
+stroke(200)
 line(0, 0, 0, -280);
 pop();
 
@@ -291,7 +302,7 @@ let timeDisplay2 =
   nf(hours2, 2) + ":" + nf(minutes2, 2) + ":" + nf(seconds2, 2) + " " + ampm2;
 
 // reality time display (on screen)
-fill(0);
+fill(200);
 textFont('Courier New');
 textSize(20);
 let tmw2 = map(mouseX, 0, width, width / 2.8, width - width / 2.8);
@@ -301,6 +312,7 @@ text(timeDisplay2, tmw2, 610);
 ////drawing line
 push();
 translate(mw2, height / 2);
+stroke(200)
 line(0, 0, 0, 250);
 pop();
 
@@ -361,7 +373,7 @@ let timeDisplay1 =
   nf(hours1, 2) + ":" + nf(minutes1, 2) + ":" + nf(seconds1, 2) + " " + ampm1;
 
 // reality time display (on screen)
-fill(0);
+fill(200);
 textFont('Courier New');
 textSize(20);
 let tmw1 = map(mouseX, 0, width, width / 4.8, width - width / 4.8);
@@ -371,6 +383,7 @@ text(timeDisplay1, tmw1, 30);
 ////drawing line
 push();
 translate(mw1, height / 2);
+stroke(200)
 line(0, 0, 0, -230);
 pop();
 
@@ -431,17 +444,18 @@ pop();
     nf(hours0, 2) + ":" + nf(minutes0, 2) + ":" + nf(seconds0, 2) + " " + ampm0;
 
   // reality time display (on screen)
-  fill(0);
+  fill(200);
   textFont('Courier New');
-  textSize(20);
+  textSize(16);
   let tmw0 = map(mouseX, 0, width, width / 9, width - width / 9);
-  text('Reality', tmw0, 500)
-  text(timeDisplay0, tmw0, 530);
+  text('Reality', tmw0, 460)
+  text(timeDisplay0, tmw0, 485);
 
   ////drawing line
   push();
   translate(mw0, height / 2);
-  line(0, 0, 0, 150);
+  stroke(200)
+  line(0, 0, 0, 120);
   pop();
 
 
