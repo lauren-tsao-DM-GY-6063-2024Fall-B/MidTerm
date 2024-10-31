@@ -1,9 +1,20 @@
 let slowSec = 0;
-let circleReal = { d: 200};
-let circle1 = { d: 300 };
-let circle2 = { d: 400 };
-let circle3 = { d: 500 };
-let circle4 = { d: 1000 };
+let circleD = {r: 200, L1: 300, L2: 400, L3: 500, L4: 1000};
+let mImg;
+
+function preload() {
+  mImg = loadImage("Reality_Texture.gif");
+}
+
+
+// function drawCircle(x, y, diameter, angle, color) {
+//   push();
+//   translate(x, y);
+//   rotate(angle);
+//   fill(color);
+//   ellipse(0, 0, diameter);
+//   pop();
+// }
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
@@ -11,18 +22,9 @@ function setup() {
   textAlign(CENTER, CENTER);
 }
 
-function drawCircle(x, y, diameter, angle, color) {
-  push();
-  translate(x, y);
-  rotate(angle);
-  fill(color);
-  drawingContext.setLineDash([10, 50]);
-  ellipse(0, 0, diameter);
-  pop();
-}
-
 function draw() {
   background(220);
+  image(mImg, -width, 0); //hide graphics
 
   // current time and date data (real-time)
   let now = new Date();
@@ -76,7 +78,23 @@ function draw() {
   // Reality circle
   push();
   let mw = map(mouseX, 0, width, width / 9, width - width / 9);
-  drawCircle(mw, height / 2, circleReal.d, angle0, color(200, 100, 0));
+  pop();
+
+  // circle mask (create)
+  let maskImg = createGraphics(circleD.r, circleD.r); // load gif off-screen (buffer)
+  maskImg.ellipse(circleD.r / 2, circleD.r / 2, circleD.r); // draw a circle in the buffer
+  maskImg.loadPixels();
+  
+  // prep Gif Image
+  let imgWithMask = createImage(circleD.r, circleD.r);
+  imgWithMask.copy(mImg, 0, 0, mImg.width, mImg.height, 0, 0, circleD.r, circleD.r);
+  imgWithMask.mask(maskImg); // apply the mask to the gif
+
+  // circle mask (draw)
+  push();
+  translate(mw, height / 2);
+  rotate(angle0);
+  image(imgWithMask, -circleD.r / 2, -circleD.r / 2); // Center the image
   pop();
 
   // reality time
