@@ -1,6 +1,22 @@
 ## Creative Coding (DM-GY 6063) - Mid Term 
 
 
+### Milestone #3
+
+#### what you’ve done this week
+- Map the x-positions of the layer circles to change according to the position of the mouse.
+- Created and animated textures in Adobe After Effects.
+- Applied textures to the dream layer circles and background.
+- Edited appearance and positioning of time displays.
+- Animated looped circles in the background.
+
+#### Description of the final interactivity or time-based logic
+- Interactivity: The layer circles will move together with the mouse along the x-axis.
+- Time-based logic: The time on the layer circles are directly linked to real time, operating 12x - 20736x slower depending on the layer.
+
+#### Images, drawings, sketches
+- Please click [here]
+
 ### Milestone #2
 
 #### What you’ve done this week

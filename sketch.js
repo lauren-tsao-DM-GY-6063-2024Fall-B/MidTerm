@@ -8,7 +8,7 @@ let mImg4;
 let mImgBG;
 let spacing = 1.1;
 let detailAngle = 0;
-let rotationSpeed = 2;
+let rotationSpeed = 1;
 
 function preload() {
   mImg0 = loadImage("../assets/Reality_Texture.gif");
@@ -149,7 +149,7 @@ function draw() {
  textFont('Courier New');
  textSize(16);
  let tmw4 = map(mouseX, 0, width, width - width / 4, width / 4);
- text('Layer 4', tmw4, 580)
+ text('Limbo', tmw4, 580)
  text(timeDisplay4, tmw4, 605);
  
  // layer 4 drawing line
