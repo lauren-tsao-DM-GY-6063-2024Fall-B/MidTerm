@@ -11,12 +11,12 @@ let detailAngle = 0;
 let rotationSpeed = 1;
 
 function preload() {
-  mImg0 = loadImage("./assets/Reality_Texture.gif");
-  mImg1 = loadImage("./assets/Layer1_Texture.gif");
-  mImg2 = loadImage("./assets/Layer2_Texture.gif");
-  mImg3 = loadImage("./assets/Layer3_Texture.gif");
-  mImg4 = loadImage("./assets/Layer4_Texture.gif");
-  mImgBG = loadImage("./assets/Background_Texture.gif")
+  mImg0 = loadImage("../assets/Reality_Texture.gif");
+  mImg1 = loadImage("../assets/Layer1_Texture.gif");
+  mImg2 = loadImage("../assets/Layer2_Texture.gif");
+  mImg3 = loadImage("../assets/Layer3_Texture.gif");
+  mImg4 = loadImage("../assets/Layer4_Texture.gif");
+  mImgBG = loadImage("../assets/Background_Texture.gif")
 }
 
 
