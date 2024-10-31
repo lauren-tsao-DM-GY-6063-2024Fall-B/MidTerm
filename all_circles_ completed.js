@@ -5,9 +5,6 @@ let mImg1;
 let mImg2;
 let mImg3;
 let mImg4;
-let spacing = 1.1;
-let detailAngle = 0;
-let rotationSpeed = 10;
 
 function preload() {
   mImg0 = loadImage("Reality_Texture.gif");
@@ -64,35 +61,27 @@ function draw() {
 
 
   // looping details in bg
+  let spacing = 1.1;
 
-  detailAngle += rotationSpeed;
-
-  //left detail circles
-  push();
-  translate(width / 6, height / 2); 
-  rotate(-detailAngle);
   for (let d = 10; d < width * 2; d *= spacing) {
+  push();
     noFill();
     stroke(150);
     strokeWeight(1);
     drawingContext.setLineDash([10, 5, 20, 8, 5, 15]);
-    ellipse(0, 0, d);
+    ellipse(width / 6, height / 2, d);
+    pop();
   }
-  pop();
 
-  //right detail circles
-  push();
-  translate(width - width / 6, height / 2); 
-  rotate(detailAngle);
   for (let d = 10; d < width * 2; d *= spacing) {
-    noFill();
-    stroke(150);
-    strokeWeight(1);
-    drawingContext.setLineDash([10, 5, 20, 8, 5, 15]);
-    ellipse(0, 0, d);
-  }
-  pop();
-
+    push();
+      noFill();
+      stroke(150);
+      strokeWeight(1);
+      drawingContext.setLineDash([10, 5, 20, 8, 5, 15]);
+      ellipse(width - width / 6, height / 2, d);
+      pop();
+    }
 
 
   ////////////
@@ -239,7 +228,7 @@ pop();
 
 // LAYER 2 CIRCLE
 push();
-let mw2 = map(mouseX, 0, width, width / 2.8, width - width / 2.8);
+let mw2 = map(mouseX, 0, width, width / 3, width - width / 3);
 pop();
 
 ////drawing circle
@@ -294,7 +283,7 @@ let timeDisplay2 =
 fill(0);
 textFont('Courier New');
 textSize(20);
-let tmw2 = map(mouseX, 0, width, width / 2.8, width - width / 2.8);
+let tmw2 = map(mouseX, 0, width, width / 3, width - width / 3);
 text('Layer 2', tmw2, 580)
 text(timeDisplay2, tmw2, 610);
 
@@ -309,7 +298,7 @@ pop();
   
 // LAYER 1 CIRCLE
 push();
-let mw1 = map(mouseX, 0, width, width / 4.8, width - width / 4.8);
+let mw1 = map(mouseX, 0, width, width / 5, width - width / 5);
 pop();
 
 ////drawing circle
@@ -364,7 +353,7 @@ let timeDisplay1 =
 fill(0);
 textFont('Courier New');
 textSize(20);
-let tmw1 = map(mouseX, 0, width, width / 4.8, width - width / 4.8);
+let tmw1 = map(mouseX, 0, width, width / 5, width - width / 5);
 text('Layer 1', tmw1, 60)
 text(timeDisplay1, tmw1, 30);
 
