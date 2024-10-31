@@ -1,5 +1,5 @@
 let slowSec = 0;
-let circleD = {r: 200, L1: 300, L2: 400, L3: 500, L4: 1000};
+let circleD = {r: 200, L1: 300, L2: 400, L3: 500, L4: 600};
 let mImg0;
 let mImg1;
 let mImg2;
@@ -36,6 +36,7 @@ function draw() {
   image(mImg1, -width, 0);
   image(mImg2, -width, 0);
   image(mImg3, -width, 0);
+  image(mImg4, -width, 0);
 
   // current time and date data (real-time)
   let now = new Date();
@@ -85,9 +86,79 @@ function draw() {
 
   ////////////
 
+// LAYER 4 CIRCLE
+push();
+let mw4 = map(mouseX, 0, width, width - width / 4, width / 4);
+pop();
+
+////drawing circle
+
+// circle mask (create)
+let maskImg4 = createGraphics(circleD.L4, circleD.L4); // load gif off-screen (buffer)
+maskImg4.ellipse(circleD.L4 / 2, circleD.L4 / 2, circleD.L4); // draw a circle in the buffer
+maskImg4.loadPixels();
+
+// prep Gif Image
+let img4WithMask = createImage(circleD.L4, circleD.L4);
+img4WithMask.copy(mImg4, 0, 0, mImg4.width, mImg4.height, 0, 0, circleD.L4, circleD.L4);
+img4WithMask.mask(maskImg4); // apply the mask to the gif
+
+// circle mask (draw)
+push();
+translate(mw4, height / 2);
+rotate(angle4);
+image(img4WithMask, -circleD.L4 / 2, -circleD.L4 / 2); // Center the image
+pop();
+
+////drawing time display
+
+// reality time
+let hours4 = floor(slowSec4 / 3600) % 24;
+let minutes4 = floor(slowSec4 / 60) % 60; 
+let seconds4 = floor(slowSec4) % 60;
+
+// reality AM/PM trigger
+let ampm4;
+
+if (hours4 >= 12) {
+  ampm4 = "pm";
+} else {
+  ampm4 = "am";
+}
+
+// reality hour reset trigger
+hours4 = hours4 % 12;
+
+if (hours4 === 0) {
+  hours4 = 12;
+} else {
+  // change nothing
+}
+
+// reality time display format hh:mm:ss (AM/PM)
+let timeDisplay4 =
+  nf(hours4, 2) + ":" + nf(minutes4, 2) + ":" + nf(seconds4, 2) + " " + ampm4;
+
+// reality time display (on screen)
+fill(0);
+textFont('Courier New');
+textSize(20);
+let tmw4 = map(mouseX, 0, width, width - width / 6, width / 6);
+text('Layer 4', tmw4, 50)
+text(timeDisplay4, tmw4, 20);
+
+////drawing line
+push();
+translate(mw4, height / 2);
+line(0, 0, 0, -280);
+pop();
+
+
+
+
 // LAYER 3 CIRCLE
 push();
-let mw3 = map(mouseX, 0, width, width / 2.2, width - width / 2.2);
+let mw3 = map(mouseX, 0, width, width - width / 2.2, width / 2.2);
 pop();
 
 ////drawing circle
@@ -142,7 +213,7 @@ let timeDisplay3 =
 fill(0);
 textFont('Courier New');
 textSize(20);
-let tmw3 = map(mouseX, 0, width, width / 2.2, width - width / 2.2);
+let tmw3 = map(mouseX, 0, width, width - width / 2.2, width / 2.2);
 text('Layer 3', tmw3, 50)
 text(timeDisplay3, tmw3, 20);
 
