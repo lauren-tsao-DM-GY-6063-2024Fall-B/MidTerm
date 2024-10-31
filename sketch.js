@@ -34,6 +34,8 @@ function draw() {
   background(220);
   image(mImg0, -width, 0); //hide graphics
   image(mImg1, -width, 0);
+  image(mImg2, -width, 0);
+  image(mImg3, -width, 0);
 
   // current time and date data (real-time)
   let now = new Date();
@@ -83,6 +85,142 @@ function draw() {
 
   ////////////
 
+// LAYER 3 CIRCLE
+push();
+let mw3 = map(mouseX, 0, width, width / 2.2, width - width / 2.2);
+pop();
+
+////drawing circle
+
+// circle mask (create)
+let maskImg3 = createGraphics(circleD.L3, circleD.L3); // load gif off-screen (buffer)
+maskImg3.ellipse(circleD.L3 / 2, circleD.L3 / 2, circleD.L3); // draw a circle in the buffer
+maskImg3.loadPixels();
+
+// prep Gif Image
+let img3WithMask = createImage(circleD.L3, circleD.L3);
+img3WithMask.copy(mImg3, 0, 0, mImg3.width, mImg3.height, 0, 0, circleD.L3, circleD.L3);
+img3WithMask.mask(maskImg3); // apply the mask to the gif
+
+// circle mask (draw)
+push();
+translate(mw3, height / 2);
+rotate(angle3);
+image(img3WithMask, -circleD.L3 / 2, -circleD.L3 / 2); // Center the image
+pop();
+
+////drawing time display
+
+// reality time
+let hours3 = floor(slowSec3 / 3600) % 24;
+let minutes3 = floor(slowSec3 / 60) % 60; 
+let seconds3 = floor(slowSec3) % 60;
+
+// reality AM/PM trigger
+let ampm3;
+
+if (hours3 >= 12) {
+  ampm3 = "pm";
+} else {
+  ampm3 = "am";
+}
+
+// reality hour reset trigger
+hours3 = hours3 % 12;
+
+if (hours3 === 0) {
+  hours3 = 12;
+} else {
+  // change nothing
+}
+
+// reality time display format hh:mm:ss (AM/PM)
+let timeDisplay3 =
+  nf(hours3, 2) + ":" + nf(minutes3, 2) + ":" + nf(seconds3, 2) + " " + ampm3;
+
+// reality time display (on screen)
+fill(0);
+textFont('Courier New');
+textSize(20);
+let tmw3 = map(mouseX, 0, width, width / 2.2, width - width / 2.2);
+text('Layer 3', tmw3, 50)
+text(timeDisplay3, tmw3, 20);
+
+////drawing line
+push();
+translate(mw3, height / 2);
+line(0, 0, 0, -280);
+pop();
+
+
+
+
+// LAYER 2 CIRCLE
+push();
+let mw2 = map(mouseX, 0, width, width / 3, width - width / 3);
+pop();
+
+////drawing circle
+
+// circle mask (create)
+let maskImg2 = createGraphics(circleD.L2, circleD.L2); // load gif off-screen (buffer)
+maskImg2.ellipse(circleD.L2 / 2, circleD.L2 / 2, circleD.L2); // draw a circle in the buffer
+maskImg2.loadPixels();
+
+// prep Gif Image
+let img2WithMask = createImage(circleD.L2, circleD.L2);
+img2WithMask.copy(mImg2, 0, 0, mImg2.width, mImg2.height, 0, 0, circleD.L2, circleD.L2);
+img2WithMask.mask(maskImg2); // apply the mask to the gif
+
+// circle mask (draw)
+push();
+translate(mw2, height / 2);
+rotate(angle2);
+image(img2WithMask, -circleD.L2 / 2, -circleD.L2 / 2); // Center the image
+pop();
+
+////drawing time display
+
+// reality time
+let hours2 = floor(slowSec2 / 3600) % 24;
+let minutes2 = floor(slowSec2 / 60) % 60; 
+let seconds2 = floor(slowSec2) % 60;
+
+// reality AM/PM trigger
+let ampm2;
+
+if (hours2 >= 12) {
+  ampm2 = "pm";
+} else {
+  ampm2 = "am";
+}
+
+// reality hour reset trigger
+hours2 = hours2 % 12;
+
+if (hours2 === 0) {
+  hours2 = 12;
+} else {
+  // change nothing
+}
+
+// reality time display format hh:mm:ss (AM/PM)
+let timeDisplay2 =
+  nf(hours2, 2) + ":" + nf(minutes2, 2) + ":" + nf(seconds2, 2) + " " + ampm2;
+
+// reality time display (on screen)
+fill(0);
+textFont('Courier New');
+textSize(20);
+let tmw2 = map(mouseX, 0, width, width / 3, width - width / 3);
+text('Layer 2', tmw2, 580)
+text(timeDisplay2, tmw2, 610);
+
+////drawing line
+push();
+translate(mw2, height / 2);
+line(0, 0, 0, 250);
+pop();
 
 
 
