@@ -15,7 +15,7 @@
 - Time-based logic: The time on the layer circles are directly linked to real time, operating 12x - 20736x slower depending on the layer.
 
 #### Images, drawings, sketches
-- Please click [here]
+- Please click [here](https://drive.google.com/drive/folders/1AmSxhBiu-aMUqZbYustz73wtZOclIDM5?usp=drive_link)
 
 ### Milestone #2
 
