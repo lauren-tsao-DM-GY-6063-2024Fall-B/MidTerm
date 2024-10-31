@@ -304,16 +304,16 @@ let timeDisplay2 =
 // reality time display (on screen)
 fill(200);
 textFont('Courier New');
-textSize(20);
+textSize(16);
 let tmw2 = map(mouseX, 0, width, width / 2.8, width - width / 2.8);
-text('Layer 2', tmw2, 580)
-text(timeDisplay2, tmw2, 610);
+text('Layer 2', tmw2, 520)
+text(timeDisplay2, tmw2, 545);
 
 ////drawing line
 push();
 translate(mw2, height / 2);
 stroke(200)
-line(0, 0, 0, 250);
+line(0, 0, 0, 180);
 pop();
 
 
@@ -375,16 +375,16 @@ let timeDisplay1 =
 // reality time display (on screen)
 fill(200);
 textFont('Courier New');
-textSize(20);
+textSize(16);
 let tmw1 = map(mouseX, 0, width, width / 4.8, width - width / 4.8);
-text('Layer 1', tmw1, 60)
-text(timeDisplay1, tmw1, 30);
+text('Layer 1', tmw1, 165)
+text(timeDisplay1, tmw1, 140);
 
 ////drawing line
 push();
 translate(mw1, height / 2);
 stroke(200)
-line(0, 0, 0, -230);
+line(0, 0, 0, -130);
 pop();
 
 
@@ -448,14 +448,14 @@ pop();
   textFont('Courier New');
   textSize(16);
   let tmw0 = map(mouseX, 0, width, width / 9, width - width / 9);
-  text('Reality', tmw0, 460)
-  text(timeDisplay0, tmw0, 485);
+  text('Reality', tmw0, 420)
+  text(timeDisplay0, tmw0, 445);
 
   ////drawing line
   push();
   translate(mw0, height / 2);
   stroke(200)
-  line(0, 0, 0, 120);
+  line(0, 0, 0, 80);
   pop();
 
 
