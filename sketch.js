@@ -1,9 +1,17 @@
 let slowSec = 0;
 let circleD = {r: 200, L1: 300, L2: 400, L3: 500, L4: 1000};
-let mImg;
+let mImg0;
+let mImg1;
+let mImg2;
+let mImg3;
+let mImg4;
 
 function preload() {
-  mImg = loadImage("Reality_Texture.gif");
+  mImg0 = loadImage("Reality_Texture.gif");
+  mImg1 = loadImage("Layer1_Texture.gif");
+  mImg2 = loadImage("Layer2_Texture.gif");
+  mImg3 = loadImage("Layer3_Texture.gif");
+  mImg4 = loadImage("Layer4_Texture.gif");
 }
 
 
@@ -24,7 +32,8 @@ function setup() {
 
 function draw() {
   background(220);
-  image(mImg, -width, 0); //hide graphics
+  image(mImg0, -width, 0); //hide graphics
+  image(mImg1, -width, 0);
 
   // current time and date data (real-time)
   let now = new Date();
@@ -75,28 +84,101 @@ function draw() {
   ////////////
 
 
+
+
+  
+// LAYER 1 CIRCLE
+push();
+let mw1 = map(mouseX, 0, width, width / 5, width - width / 5);
+pop();
+
+////drawing circle
+
+// circle mask (create)
+let maskImg1 = createGraphics(circleD.L1, circleD.L1); // load gif off-screen (buffer)
+maskImg1.ellipse(circleD.L1 / 2, circleD.L1 / 2, circleD.L1); // draw a circle in the buffer
+maskImg1.loadPixels();
+
+// prep Gif Image
+let img1WithMask = createImage(circleD.L1, circleD.L1);
+img1WithMask.copy(mImg1, 0, 0, mImg1.width, mImg1.height, 0, 0, circleD.L1, circleD.L1);
+img1WithMask.mask(maskImg1); // apply the mask to the gif
+
+// circle mask (draw)
+push();
+translate(mw1, height / 2);
+rotate(angle1);
+image(img1WithMask, -circleD.L1 / 2, -circleD.L1 / 2); // Center the image
+pop();
+
+////drawing time display
+
+// reality time
+let hours1 = floor(slowSec1 / 3600) % 24;
+let minutes1 = floor(slowSec1 / 60) % 60; 
+let seconds1 = floor(slowSec1) % 60;
+
+// reality AM/PM trigger
+let ampm1;
+
+if (hours1 >= 12) {
+  ampm1 = "pm";
+} else {
+  ampm1 = "am";
+}
+
+// reality hour reset trigger
+hours1 = hours1 % 12;
+
+if (hours1 === 0) {
+  hours1 = 12;
+} else {
+  // change nothing
+}
+
+// reality time display format hh:mm:ss (AM/PM)
+let timeDisplay1 =
+  nf(hours1, 2) + ":" + nf(minutes1, 2) + ":" + nf(seconds1, 2) + " " + ampm1;
+
+// reality time display (on screen)
+fill(0);
+textFont('Courier New');
+textSize(20);
+let tmw1 = map(mouseX, 0, width, width / 5, width - width / 5);
+text('Layer 1', tmw1, 60)
+text(timeDisplay1, tmw1, 30);
+
+////drawing line
+push();
+translate(mw1, height / 2);
+line(0, 0, 0, -230);
+pop();
+
+
+
+
   // REALITY CIRCLE
   push();
-  let mw = map(mouseX, 0, width, width / 9, width - width / 9);
+  let mw0 = map(mouseX, 0, width, width / 9, width - width / 9);
   pop();
 
   ////drawing circle
 
   // circle mask (create)
-  let maskImg = createGraphics(circleD.r, circleD.r); // load gif off-screen (buffer)
-  maskImg.ellipse(circleD.r / 2, circleD.r / 2, circleD.r); // draw a circle in the buffer
-  maskImg.loadPixels();
+  let maskImg0 = createGraphics(circleD.r, circleD.r); // load gif off-screen (buffer)
+  maskImg0.ellipse(circleD.r / 2, circleD.r / 2, circleD.r); // draw a circle in the buffer
+  maskImg0.loadPixels();
   
   // prep Gif Image
-  let imgWithMask = createImage(circleD.r, circleD.r);
-  imgWithMask.copy(mImg, 0, 0, mImg.width, mImg.height, 0, 0, circleD.r, circleD.r);
-  imgWithMask.mask(maskImg); // apply the mask to the gif
+  let img0WithMask = createImage(circleD.r, circleD.r);
+  img0WithMask.copy(mImg0, 0, 0, mImg0.width, mImg0.height, 0, 0, circleD.r, circleD.r);
+  img0WithMask.mask(maskImg0); // apply the mask to the gif
 
   // circle mask (draw)
   push();
-  translate(mw, height / 2);
+  translate(mw0, height / 2);
   rotate(angle0);
-  image(imgWithMask, -circleD.r / 2, -circleD.r / 2); // Center the image
+  image(img0WithMask, -circleD.r / 2, -circleD.r / 2); // Center the image
   pop();
 
 ////drawing time display
@@ -132,17 +214,16 @@ function draw() {
   fill(0);
   textFont('Courier New');
   textSize(20);
-  let tmw = map(mouseX, 0, width, width / 9, width - width / 9);
-  text('Reality', tmw, 500)
-  text(timeDisplay0, tmw, 530);
+  let tmw0 = map(mouseX, 0, width, width / 9, width - width / 9);
+  text('Reality', tmw0, 500)
+  text(timeDisplay0, tmw0, 530);
 
   ////drawing line
   push();
-  translate(mw, height / 2);
+  translate(mw0, height / 2);
   line(0, 0, 0, 150);
+  pop();
+
 
 }
 
-// NEXT STEPS:
-// turn circles into custom functions for adding details
-// adding arrays for mouse roll overs
