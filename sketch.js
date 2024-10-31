@@ -1,5 +1,5 @@
 let slowSec = 0;
-let circleD = {r: 100, L1: 200, L2: 300, L3: 400, L4: 500};
+let circleD = {r: 100, L1: 200, L2: 300, L3: 350, L4: 400};
 let mImg0;
 let mImg1;
 let mImg2;
@@ -162,16 +162,16 @@ let timeDisplay4 =
 // reality time display (on screen)
 fill(200);
 textFont('Courier New');
-textSize(20);
-let tmw4 = map(mouseX, 0, width, width - width / 6, width / 6);
-text('Layer 4', tmw4, 50)
-text(timeDisplay4, tmw4, 20);
+textSize(16);
+let tmw4 = map(mouseX, 0, width, width - width / 4, width / 4);
+text('Layer 4', tmw4, 580)
+text(timeDisplay4, tmw4, 605);
 
 ////drawing line
 push();
 translate(mw4, height / 2);
 stroke(200)
-line(0, 0, 0, -280);
+line(0, 0, 0, 230);
 pop();
 
 
@@ -233,16 +233,16 @@ let timeDisplay3 =
 // reality time display (on screen)
 fill(200);
 textFont('Courier New');
-textSize(20);
+textSize(16);
 let tmw3 = map(mouseX, 0, width, width - width / 2.2, width / 2.2);
-text('Layer 3', tmw3, 50)
-text(timeDisplay3, tmw3, 20);
+text('Layer 3', tmw3, 65)
+text(timeDisplay3, tmw3, 40);
 
 ////drawing line
 push();
 translate(mw3, height / 2);
 stroke(200)
-line(0, 0, 0, -280);
+line(0, 0, 0, -230);
 pop();
 
 
