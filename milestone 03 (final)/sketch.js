@@ -112,7 +112,7 @@ function draw() {
  push();
  translate(mw4, height / 2);
  rotate(angle4);
- image(img4WithMask, -circleD.L4 / 2, -circleD.L4 / 2); // center the image
+ image(img4WithMask, -circleD.L4 / 2, -circleD.L4 / 2); // center the gif
  pop();
  
  //// drawing time display
@@ -184,7 +184,7 @@ function draw() {
  push();
  translate(mw3, height / 2);
  rotate(angle3);
- image(img3WithMask, -circleD.L3 / 2, -circleD.L3 / 2); // center the image
+ image(img3WithMask, -circleD.L3 / 2, -circleD.L3 / 2); // center the gif
  pop();
  
  ////drawing time display
@@ -256,7 +256,7 @@ function draw() {
  push();
  translate(mw2, height / 2);
  rotate(angle2);
- image(img2WithMask, -circleD.L2 / 2, -circleD.L2 / 2); // center the image
+ image(img2WithMask, -circleD.L2 / 2, -circleD.L2 / 2); // center the gif
  pop();
  
  ////drawing time display
@@ -328,7 +328,7 @@ function draw() {
  push();
  translate(mw1, height / 2);
  rotate(angle1);
- image(img1WithMask, -circleD.L1 / 2, -circleD.L1 / 2); // center the image
+ image(img1WithMask, -circleD.L1 / 2, -circleD.L1 / 2); // center the gif
  pop();
  
  //// drawing time display
@@ -400,7 +400,7 @@ function draw() {
   push();
   translate(mw0, height / 2);
   rotate(angle0);
-  image(img0WithMask, -circleD.r / 2, -circleD.r / 2); // center the image
+  image(img0WithMask, -circleD.r / 2, -circleD.r / 2); // center the gif
   pop();
 
   //// drawing time display
