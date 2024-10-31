@@ -75,10 +75,12 @@ function draw() {
   ////////////
 
 
-  // Reality circle
+  // REALITY CIRCLE
   push();
   let mw = map(mouseX, 0, width, width / 9, width - width / 9);
   pop();
+
+  ////drawing circle
 
   // circle mask (create)
   let maskImg = createGraphics(circleD.r, circleD.r); // load gif off-screen (buffer)
@@ -97,6 +99,8 @@ function draw() {
   image(imgWithMask, -circleD.r / 2, -circleD.r / 2); // Center the image
   pop();
 
+////drawing time display
+
   // reality time
   let hours0 = floor(realSec / 3600) % 24;
   let minutes0 = floor(realSec / 60) % 60; 
@@ -106,9 +110,9 @@ function draw() {
   let ampm0;
 
   if (hours0 >= 12) {
-    ampm0 = "PM";
+    ampm0 = "pm";
   } else {
-    ampm0 = "AM";
+    ampm0 = "am";
   }
 
   // reality hour reset trigger
@@ -126,9 +130,16 @@ function draw() {
 
   // reality time display (on screen)
   fill(0);
-  textSize(25);
+  textFont('Courier New');
+  textSize(20);
   let tmw = map(mouseX, 0, width, width / 9, width - width / 9);
-  text(timeDisplay0, tmw, height / 2);
+  text('Reality', tmw, 500)
+  text(timeDisplay0, tmw, 530);
+
+  ////drawing line
+  push();
+  translate(mw, height / 2);
+  line(0, 0, 0, 150);
 
 }
 
