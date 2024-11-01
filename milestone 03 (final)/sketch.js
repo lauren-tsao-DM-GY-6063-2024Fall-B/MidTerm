@@ -57,13 +57,6 @@ function draw() {
   let slowSec3 = sec / 1728; // 1728x slower
   let slowSec4 = sec / 20736; // 20736x slower
 
-  // rotation angle
-  let angle0 = map(realSec % 60, 0, 60, 0, 360);
-  let angle1 = map(slowSec1 % 60, 0, 60, 0, 360);
-  let angle2 = map(slowSec2 % 60, 0, 60, 0, 360);
-  let angle3 = map(slowSec3 % 60, 0, 60, 0, 360);
-  let angle4 = map(slowSec4 % 60, 0, 60, 0, 360);
-
 
 ////////////
 
@@ -111,7 +104,6 @@ function draw() {
  // circle mask (draw)
  push();
  translate(mw4, height / 2);
- rotate(angle4);
  image(img4WithMask, -circleD.L4 / 2, -circleD.L4 / 2); // center the gif
  pop();
  
@@ -183,7 +175,6 @@ function draw() {
  // circle mask (draw)
  push();
  translate(mw3, height / 2);
- rotate(angle3);
  image(img3WithMask, -circleD.L3 / 2, -circleD.L3 / 2); // center the gif
  pop();
  
@@ -255,7 +246,6 @@ function draw() {
  // circle mask (draw)
  push();
  translate(mw2, height / 2);
- rotate(angle2);
  image(img2WithMask, -circleD.L2 / 2, -circleD.L2 / 2); // center the gif
  pop();
  
@@ -327,7 +317,6 @@ function draw() {
  // circle mask (draw)
  push();
  translate(mw1, height / 2);
- rotate(angle1);
  image(img1WithMask, -circleD.L1 / 2, -circleD.L1 / 2); // center the gif
  pop();
  
@@ -399,7 +388,6 @@ function draw() {
   // circle mask (draw)
   push();
   translate(mw0, height / 2);
-  rotate(angle0);
   image(img0WithMask, -circleD.r / 2, -circleD.r / 2); // center the gif
   pop();
 
