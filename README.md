@@ -37,7 +37,7 @@
 #### What book, album or movie did you choose? What is it about?
 - Inception by Christoper Nolan
 
-- It is a film about a thief named Dom Cobb, who steals confidential information from people's dreams. He is given the chance to have his criminal past erased and be reuinited with his children, on the condition that he successfully performs 'inception', in which he has to plant an idea in someone's mind without them realizing it. This task involves him and his team descending down layers of dreams, with time passing slower with every layer
+- It is a film about a thief named Dom Cobb, who steals confidential information from people's dreams. He is given the chance to have his criminal past erased and be reunited with his children, on the condition that he successfully performs 'inception', in which he has to plant an idea in someone's mind without them realizing it. This task involves him and his team descending down layers of dreams, with time passing slower with every layer
 
 #### What aspect of the film will you include in your poster?
 - The 5 different layers of dreams
