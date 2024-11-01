@@ -137,14 +137,12 @@ function draw() {
    nf(hours4, 2) + ":" + nf(minutes4, 2) + ":" + nf(seconds4, 2) + " " + ampm4;
  
  // layer 4 time display (on screen)
- push();
  fill(200);
  textFont('Courier New');
  textSize(16);
  let tmw4 = map(mouseX, 0, width, width - width / 4, width / 4);
- text('Limbo', tmw4, 610)
- text(timeDisplay4, tmw4, 635);
- pop();
+ text('Limbo', tmw4, 580)
+ text(timeDisplay4, tmw4, 605);
  
  // layer 4 drawing line
  push();
@@ -210,14 +208,12 @@ function draw() {
    nf(hours3, 2) + ":" + nf(minutes3, 2) + ":" + nf(seconds3, 2) + " " + ampm3;
  
  // layer 3 time display (on screen)
- push();
  fill(200);
  textFont('Courier New');
  textSize(16);
  let tmw3 = map(mouseX, 0, width, width - width / 2.2, width / 2.2);
- text('Layer 3', tmw3, 95)
- text(timeDisplay3, tmw3, 70);
- pop();
+ text('Layer 3', tmw3, 65)
+ text(timeDisplay3, tmw3, 40);
  
  ////drawing line
  push();
@@ -287,8 +283,8 @@ function draw() {
  textFont('Courier New');
  textSize(16);
  let tmw2 = map(mouseX, 0, width, width / 2.8, width - width / 2.8);
- text('Layer 2', tmw2, 550)
- text(timeDisplay2, tmw2, 575);
+ text('Layer 2', tmw2, 520)
+ text(timeDisplay2, tmw2, 545);
  
  // layer 2 drawing line
  push();
@@ -358,8 +354,8 @@ function draw() {
  textFont('Courier New');
  textSize(16);
  let tmw1 = map(mouseX, 0, width, width / 4.8, width - width / 4.8);
- text('Layer 1', tmw1, 195)
- text(timeDisplay1, tmw1, 170);
+ text('Layer 1', tmw1, 165)
+ text(timeDisplay1, tmw1, 140);
  
  // layer 1 drawing line
  push();
@@ -429,8 +425,8 @@ function draw() {
   textFont('Courier New');
   textSize(16);
   let tmw0 = map(mouseX, 0, width, width / 9, width - width / 9);
-  text('Reality', tmw0, 450)
-  text(timeDisplay0, tmw0, 475);
+  text('Reality', tmw0, 420)
+  text(timeDisplay0, tmw0, 445);
 
   ////drawing line
   push();
