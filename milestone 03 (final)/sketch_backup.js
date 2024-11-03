@@ -1,20 +1,23 @@
 let slowSec = 0;
 let circleD = {r: 100, L1: 200, L2: 300, L3: 350, L4: 400};
-let mImg = [];
+let mImg0;
+let mImg1;
+let mImg2;
+let mImg3;
+let mImg4;
 let mImgBG;
 let spacing = 1.1;
 let detailAngle = 0;
 let rotationSpeed = 1;
 
 function preload() {
-  mImg[0] = loadImage("../assets/Reality_Texture.gif");
-  mImg[1] = loadImage("../assets/Layer1_Texture.gif");
-  mImg[2] = loadImage("../assets/Layer2_Texture.gif");
-  mImg[3] = loadImage("../assets/Layer3_Texture.gif");
-  mImg[4] = loadImage("../assets/Layer4_Texture.gif");
+  mImg0 = loadImage("../assets/Reality_Texture.gif");
+  mImg1 = loadImage("../assets/Layer1_Texture.gif");
+  mImg2 = loadImage("../assets/Layer2_Texture.gif");
+  mImg3 = loadImage("../assets/Layer3_Texture.gif");
+  mImg4 = loadImage("../assets/Layer4_Texture.gif");
   mImgBG = loadImage("../assets/Background_Texture.gif");
 }
-
 
 
 function detailCircle(x, y, diameter, angle) {
@@ -36,12 +39,12 @@ function setup() {
 
 function draw() {
   background(220);
-  image(mImgBG, 0, 0, width, height);
-  image(mImg[0], -width, 0);  // hide graphics
-  image(mImg[1], -width, 0);
-  image(mImg[2], -width, 0);
-  image(mImg[3], -width, 0);
-  image(mImg[4], -width, 0);
+  image(mImgBG, 0, 0, width, height); //hide graphics
+  image(mImg0, -width, 0);
+  image(mImg1, -width, 0);
+  image(mImg2, -width, 0);
+  image(mImg3, -width, 0);
+  image(mImg4, -width, 0);
 
   // current time and date data (real-time)
   let now = new Date();
@@ -95,7 +98,7 @@ function draw() {
  
  // prep Gif image
  let img4WithMask = createImage(circleD.L4, circleD.L4); // vessel for holding masked image
- img4WithMask.copy(mImg[4], 0, 0, mImg[4].width, mImg[4].height, 0, 0, circleD.L4, circleD.L4);
+ img4WithMask.copy(mImg4, 0, 0, mImg4.width, mImg4.height, 0, 0, circleD.L4, circleD.L4);
  // position of image, part of image to load, width & height of destination of image
  img4WithMask.mask(maskImg4); // apply the mask to the gif
  
@@ -169,7 +172,7 @@ function draw() {
  
  // prep Gif image
  let img3WithMask = createImage(circleD.L3, circleD.L3);
- img3WithMask.copy(mImg[3], 0, 0, mImg[3].width, mImg[3].height, 0, 0, circleD.L3, circleD.L3);
+ img3WithMask.copy(mImg3, 0, 0, mImg3.width, mImg3.height, 0, 0, circleD.L3, circleD.L3);
  img3WithMask.mask(maskImg3);
  
  // circle mask (draw)
@@ -242,7 +245,7 @@ function draw() {
  
  // prep Gif image
  let img2WithMask = createImage(circleD.L2, circleD.L2);
- img2WithMask.copy(mImg[2], 0, 0, mImg[2].width, mImg[2].height, 0, 0, circleD.L2, circleD.L2);
+ img2WithMask.copy(mImg2, 0, 0, mImg2.width, mImg2.height, 0, 0, circleD.L2, circleD.L2);
  img2WithMask.mask(maskImg2);
  
  // circle mask (draw)
@@ -313,7 +316,7 @@ function draw() {
  
  // prep Gif image
  let img1WithMask = createImage(circleD.L1, circleD.L1);
- img1WithMask.copy(mImg[1], 0, 0, mImg[1].width, mImg[1].height, 0, 0, circleD.L1, circleD.L1);
+ img1WithMask.copy(mImg1, 0, 0, mImg1.width, mImg1.height, 0, 0, circleD.L1, circleD.L1);
  img1WithMask.mask(maskImg1);
  
  // circle mask (draw)
@@ -384,7 +387,7 @@ function draw() {
   
   // prep Gif image
   let img0WithMask = createImage(circleD.r, circleD.r);
-  img0WithMask.copy(mImg[0], 0, 0, mImg[0].width, mImg[0].height, 0, 0, circleD.r, circleD.r);
+  img0WithMask.copy(mImg0, 0, 0, mImg0.width, mImg0.height, 0, 0, circleD.r, circleD.r);
   img0WithMask.mask(maskImg0);
 
   // circle mask (draw)
