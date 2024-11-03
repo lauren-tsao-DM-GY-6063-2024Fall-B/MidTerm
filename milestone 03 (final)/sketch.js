@@ -92,13 +92,14 @@ function draw() {
  //// drawing circle
  
  // circle mask (create)
- let maskImg4 = createGraphics(circleD.L4, circleD.L4); // load gif off-screen (buffer)
+ let maskImg4 = createGraphics(circleD.L4, circleD.L4); // load mask off-screen (buffer)
  maskImg4.ellipse(circleD.L4 / 2, circleD.L4 / 2, circleD.L4); // draw a circle in the buffer
- maskImg4.loadPixels();
+ maskImg4.loadPixels(); // loading mask graphic
  
- // prep Gif Image
- let img4WithMask = createImage(circleD.L4, circleD.L4);
+ // prep Gif image
+ let img4WithMask = createImage(circleD.L4, circleD.L4); // vessel for holding masked image
  img4WithMask.copy(mImg4, 0, 0, mImg4.width, mImg4.height, 0, 0, circleD.L4, circleD.L4);
+ // position of image, part of image to load, width & height of destination of image
  img4WithMask.mask(maskImg4); // apply the mask to the gif
  
  // circle mask (draw)
@@ -165,19 +166,19 @@ function draw() {
  //// drawing circle
  
  // circle mask (create)
- let maskImg3 = createGraphics(circleD.L3, circleD.L3); // load gif off-screen (buffer)
- maskImg3.ellipse(circleD.L3 / 2, circleD.L3 / 2, circleD.L3); // draw a circle in the buffer
+ let maskImg3 = createGraphics(circleD.L3, circleD.L3);
+ maskImg3.ellipse(circleD.L3 / 2, circleD.L3 / 2, circleD.L3);
  maskImg3.loadPixels();
  
- // prep Gif Image
+ // prep Gif image
  let img3WithMask = createImage(circleD.L3, circleD.L3);
  img3WithMask.copy(mImg3, 0, 0, mImg3.width, mImg3.height, 0, 0, circleD.L3, circleD.L3);
- img3WithMask.mask(maskImg3); // apply the mask to the gif
+ img3WithMask.mask(maskImg3);
  
  // circle mask (draw)
  push();
  translate(mw3, height / 2);
- image(img3WithMask, -circleD.L3 / 2, -circleD.L3 / 2); // center the gif
+ image(img3WithMask, -circleD.L3 / 2, -circleD.L3 / 2);
  pop();
  
  ////drawing time display
@@ -238,19 +239,19 @@ function draw() {
  //// drawing circle
  
  // circle mask (create)
- let maskImg2 = createGraphics(circleD.L2, circleD.L2); // load gif off-screen (buffer)
- maskImg2.ellipse(circleD.L2 / 2, circleD.L2 / 2, circleD.L2); // draw a circle in the buffer
+ let maskImg2 = createGraphics(circleD.L2, circleD.L2);
+ maskImg2.ellipse(circleD.L2 / 2, circleD.L2 / 2, circleD.L2);
  maskImg2.loadPixels();
  
- // prep Gif Image
+ // prep Gif image
  let img2WithMask = createImage(circleD.L2, circleD.L2);
  img2WithMask.copy(mImg2, 0, 0, mImg2.width, mImg2.height, 0, 0, circleD.L2, circleD.L2);
- img2WithMask.mask(maskImg2); // apply the mask to the gif
+ img2WithMask.mask(maskImg2);
  
  // circle mask (draw)
  push();
  translate(mw2, height / 2);
- image(img2WithMask, -circleD.L2 / 2, -circleD.L2 / 2); // center the gif
+ image(img2WithMask, -circleD.L2 / 2, -circleD.L2 / 2);
  pop();
  
  ////drawing time display
@@ -309,19 +310,19 @@ function draw() {
  //// drawing circle
  
  // circle mask (create)
- let maskImg1 = createGraphics(circleD.L1, circleD.L1); // load gif off-screen (buffer)
- maskImg1.ellipse(circleD.L1 / 2, circleD.L1 / 2, circleD.L1); // draw a circle in the buffer
+ let maskImg1 = createGraphics(circleD.L1, circleD.L1);
+ maskImg1.ellipse(circleD.L1 / 2, circleD.L1 / 2, circleD.L1);
  maskImg1.loadPixels();
  
- // prep Gif Image
+ // prep Gif image
  let img1WithMask = createImage(circleD.L1, circleD.L1);
  img1WithMask.copy(mImg1, 0, 0, mImg1.width, mImg1.height, 0, 0, circleD.L1, circleD.L1);
- img1WithMask.mask(maskImg1); // apply the mask to the gif
+ img1WithMask.mask(maskImg1);
  
  // circle mask (draw)
  push();
  translate(mw1, height / 2);
- image(img1WithMask, -circleD.L1 / 2, -circleD.L1 / 2); // center the gif
+ image(img1WithMask, -circleD.L1 / 2, -circleD.L1 / 2);
  pop();
  
  //// drawing time display
@@ -380,19 +381,19 @@ function draw() {
   //// drawing circle
 
   // circle mask (create)
-  let maskImg0 = createGraphics(circleD.r, circleD.r); // load gif off-screen (buffer)
-  maskImg0.ellipse(circleD.r / 2, circleD.r / 2, circleD.r); // draw a circle in the buffer
+  let maskImg0 = createGraphics(circleD.r, circleD.r);
+  maskImg0.ellipse(circleD.r / 2, circleD.r / 2, circleD.r);
   maskImg0.loadPixels();
   
-  // prep Gif Image
+  // prep Gif image
   let img0WithMask = createImage(circleD.r, circleD.r);
   img0WithMask.copy(mImg0, 0, 0, mImg0.width, mImg0.height, 0, 0, circleD.r, circleD.r);
-  img0WithMask.mask(maskImg0); // apply the mask to the gif
+  img0WithMask.mask(maskImg0);
 
   // circle mask (draw)
   push();
   translate(mw0, height / 2);
-  image(img0WithMask, -circleD.r / 2, -circleD.r / 2); // center the gif
+  image(img0WithMask, -circleD.r / 2, -circleD.r / 2);
   pop();
 
   //// drawing time display
