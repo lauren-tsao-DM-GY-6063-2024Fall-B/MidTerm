@@ -3,7 +3,7 @@
 
 ### Milestone #3
 
-#### what you’ve done this week
+#### What you’ve done this week
 - Map the x-positions of the layer circles to change according to the position of the mouse.
 - Created and animated textures in Adobe After Effects.
 - Applied textures to the dream layer circles and background.
