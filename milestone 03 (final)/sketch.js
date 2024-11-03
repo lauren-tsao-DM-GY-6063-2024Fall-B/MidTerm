@@ -16,7 +16,7 @@ function preload() {
   mImg2 = loadImage("../assets/Layer2_Texture.gif");
   mImg3 = loadImage("../assets/Layer3_Texture.gif");
   mImg4 = loadImage("../assets/Layer4_Texture.gif");
-  mImgBG = loadImage("../assets/Background_Texture.gif")
+  mImgBG = loadImage("../assets/Background_Texture.gif");
 }
 
 
@@ -24,8 +24,8 @@ function detailCircle(x, y, diameter, angle) {
   push();
   translate(x, y);
   rotate(angle);
-  stroke(150)
-  strokeWeight(1)
+  stroke(150);
+  strokeWeight(1);
   noFill();
   ellipse(0, 0, diameter);
   pop();
@@ -65,11 +65,11 @@ function draw() {
 
   detailAngle += rotationSpeed;
   let mwBGx = map(mouseX, 0, width, width / 6, width / 5);
-  let mwBGr = map(mouseX, 0, width, -80, -200)
+  let mwBGr = map(mouseX, 0, width, -80, -200);
 
   //detail circles
   push();
-  blendMode(HARD_LIGHT)
+  blendMode(HARD_LIGHT);
   translate(width / 6, height / 2); 
   rotate(mwBGr);
   for (let d = 10; d < width * 2; d *= spacing) {
@@ -143,14 +143,14 @@ function draw() {
  textFont('Courier New');
  textSize(16);
  let tmw4 = map(mouseX, 0, width, width - width / 4, width / 4);
- text('Limbo', tmw4, 610)
+ text('Limbo', tmw4, 610);
  text(timeDisplay4, tmw4, 635);
  pop();
  
  // layer 4 drawing line
  push();
  translate(mw4, height / 2);
- stroke(200)
+ stroke(200);
  line(0, 0, 0, 230);
  pop();
 
@@ -216,14 +216,14 @@ function draw() {
  textFont('Courier New');
  textSize(16);
  let tmw3 = map(mouseX, 0, width, width - width / 2.2, width / 2.2);
- text('Layer 3', tmw3, 95)
+ text('Layer 3', tmw3, 95);
  text(timeDisplay3, tmw3, 70);
  pop();
  
  ////drawing line
  push();
  translate(mw3, height / 2);
- stroke(200)
+ stroke(200);
  line(0, 0, 0, -230);
  pop();
 
@@ -288,13 +288,13 @@ function draw() {
  textFont('Courier New');
  textSize(16);
  let tmw2 = map(mouseX, 0, width, width / 2.8, width - width / 2.8);
- text('Layer 2', tmw2, 550)
+ text('Layer 2', tmw2, 550);
  text(timeDisplay2, tmw2, 575);
  
  // layer 2 drawing line
  push();
  translate(mw2, height / 2);
- stroke(200)
+ stroke(200);
  line(0, 0, 0, 180);
  pop();
 
@@ -359,13 +359,13 @@ function draw() {
  textFont('Courier New');
  textSize(16);
  let tmw1 = map(mouseX, 0, width, width / 4.8, width - width / 4.8);
- text('Layer 1', tmw1, 195)
+ text('Layer 1', tmw1, 195);
  text(timeDisplay1, tmw1, 170);
  
  // layer 1 drawing line
  push();
  translate(mw1, height / 2);
- stroke(200)
+ stroke(200);
  line(0, 0, 0, -130);
  pop();
 
@@ -430,13 +430,13 @@ function draw() {
   textFont('Courier New');
   textSize(16);
   let tmw0 = map(mouseX, 0, width, width / 9, width - width / 9);
-  text('Reality', tmw0, 450)
+  text('Reality', tmw0, 450);
   text(timeDisplay0, tmw0, 475);
 
   ////drawing line
   push();
   translate(mw0, height / 2);
-  stroke(200)
+  stroke(200);
   line(0, 0, 0, 80);
   pop();
 
