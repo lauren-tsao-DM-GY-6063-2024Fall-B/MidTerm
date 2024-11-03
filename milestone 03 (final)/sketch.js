@@ -15,8 +15,6 @@ function preload() {
   mImgBG = loadImage("../assets/Background_Texture.gif");
 }
 
-
-
 function detailCircle(x, y, diameter, angle) {
   push();
   translate(x, y);
